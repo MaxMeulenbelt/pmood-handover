@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "ParentMood",
+    "slug": "parentMood",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSLocationAlwaysUsageDescription": "We use your device location as an indicator of your mobility to help predict post-natal depression. We will never store your data for any other purposes. Please grant this app the 'Always Allow' permission to access your 'Precise' location.",
+        "NSLocationUsageDescription": "We use your device location as an indicator of your mobility to help predict post-natal depression. We will never store your data for any other purposes. Please grant this app the 'Always Allow' permission to access your 'Precise' location.",
+        "NSLocationWhenInUseUsageDescription": "We use your device location as an indicator of your mobility to help predict post-natal depression. We will never store your data for any other purposes. Please grant this app the 'Always Allow' permission to access your 'Precise' location.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "We use your device location as an indicator of your mobility to help predict post-natal depression. We will never store your data for any other purposes. Please grant this app the 'Always Allow' permission to access your 'Precise' location.",
+        "UIBackgroundModes": [
+          "location"
+        ]
+      },
+      "bundleIdentifier": "uk.ac.soton.example",
+      "buildNumber": "2"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "SCHEDULE_EXACT_ALARM"
+      ],
+      "package": "uk.ac.soton.example",
+      "versionCode": 2
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon-android.png",
+          "color": "#ffffff"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "86595c98-5b92-4c05-bac8-7dc48eacc669"
+      }
+    }
+  }
+}

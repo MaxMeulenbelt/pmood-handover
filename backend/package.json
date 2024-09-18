@@ -1,0 +1,53 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "eslint -c .eslintrc.js --ext .ts src --fix",
+    "prettier": "prettier --config .prettierrc \"src/**/*.ts\" --write",
+    "prebuild": "npm run lint && npm run prettier",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node -r dotenv/config .",
+    "test": "jest"
+  },
+  "author": "bilaalrashid",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^6.0.0",
+    "jest": "^29.1.2",
+    "moment": "^2.29.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "rotating-file-stream": "^3.0.4",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
+    "@types/helmet": "^4.0.0",
+    "@types/jest": "^29.1.2",
+    "@types/morgan": "^1.9.0",
+    "@types/node": "^18.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.24.0",
+    "eslint-plugin-jsdoc": "^39.3.6",
+    "prettier": "^2.7.1",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
