@@ -11,6 +11,7 @@ import navigation from '../../lib/navigation'
 import BackgroundButton from '../reusable/BackgroundButton'
 
 function MainSlotScreen() {
+  console.log('hello')
   const [selected, setSelected] = useState(false)
 
   const [balanceText, setBalanceText] = useState('Pick a shape')
@@ -265,7 +266,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     color: '#fff',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
 })
 

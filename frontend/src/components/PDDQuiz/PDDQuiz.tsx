@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     width: '90%',
     color: 'white',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
     fontWeight: 'bold',
     fontSize: 18,
     textAlign: 'center',
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
     color: 'white',
     alignSelf: 'center',
     marginBottom: 30,
@@ -271,6 +271,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 26,
     color: 'white',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
 })

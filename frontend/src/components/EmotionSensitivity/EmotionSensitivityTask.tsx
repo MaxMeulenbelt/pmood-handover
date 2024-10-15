@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 16,
     color: '#fff',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   instructionContainer: {
     paddingHorizontal: 32,
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 32,
     color: '#fff',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   fixationPoint: {
     fontSize: 28,

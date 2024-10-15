@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
   smallText: {
     fontSize: 16,
     color: 'white',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
 })

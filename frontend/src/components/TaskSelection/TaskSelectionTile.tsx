@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     color: '#613B6A',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   descriptionBox: {
     marginVertical: 12,

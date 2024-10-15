@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'white',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
     fontSize: 20,
     textAlign: 'center',
   },

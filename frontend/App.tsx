@@ -158,144 +158,144 @@ export default function App() {
   )
 
   return (
-    <NavigationContext.Provider value={navigationContext}>
-      <NavigationContainer ref={navigationRef}>
-        {state.isLoading ? (
-          // We haven't finished checking for the token yet
-          <Stack.Navigator
-            initialRouteName="SplashScreen"
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
-          </Stack.Navigator>
-        ) : state.userToken == null ? (
-          // No token found, user isn't signed in
-          <Stack.Navigator
-            initialRouteName="SignIn"
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            {/* {!state.hasCompletedOnboarding && <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />} */}
-            {!state.hasCompletedOnboarding && <Stack.Screen name="OnboardingChat" component={OnboardingChat} />}
-
-            <Stack.Screen name="SignIn" component={SignIn} options={{ title: 'Sign In', animationTypeForReplace: state.isSignOut ? 'pop' : 'push' }} />
-          </Stack.Navigator>
-        ) : (
-          // User is signed in
-          <Stack.Navigator
-            initialRouteName="TaskSelection"
-            screenOptions={{
-              headerShown: false,
-            }}
-          >
-            <Stack.Screen name="OnboardingChat" component={OnboardingChat} />
-            <Stack.Screen
-              name="TaskSelection"
-              component={TaskSelection}
-              options={{
-                title: 'Tasks',
-                headerRight: () => (
-                  <TouchableOpacity onPress={() => navigation.navigate('Settings', {})}>
-                    <Ionicons name="settings-sharp" size={24} color={Platform.OS === 'ios' ? PlatformColor('link') : 'blue'} />
-                  </TouchableOpacity>
-                ),
-              }}
-            />
-            <Stack.Screen name="EmotionSensitivity" component={EmotionSensitivityTask} options={{ title: 'Happy or Sad?' }} />
-            <Stack.Screen name="EmoSensResults" component={EmoSensResults} options={{ title: 'Results' }} initialParams={{ accuracy: 0, arTime: 0 }} />
-            <Stack.Screen name="MemoryRecall" component={MemoryRecallTask} options={{ title: 'Memory Recall' }} />
-            <Stack.Screen name="MemoryResults" component={MemoryResults} options={{ title: 'Results' }} initialParams={{ recalledWords: 0 }} />
-            <Stack.Screen name="PanasTask" component={PanasTask} options={{ title: 'Read Your Mood' }} />
-            <Stack.Screen name="ReinforcementLearning" component={ReinforcedLearningTask} options={{ title: 'Patterns and Points' }} />
-            <Stack.Screen name="RLResults" component={RLResults} options={{ title: 'Results' }} />
-            <Stack.Screen name="DelayDiscounting" component={DelayDiscountingTask} options={{ title: 'Now or Later' }} />
-            <Stack.Screen name="DelayResults" component={DelayResults} options={{ title: 'Results' }} initialParams={{ now: 50, later: 50 }} />
-            <Stack.Screen name="SlotMachine" component={SlotMachine} options={{ title: 'Slot Machine' }} />
-            <Stack.Screen name="EffortExpenditure" component={EffortExpenditureTask} options={{ title: 'Fill the Bar' }} />
-            <Stack.Screen name="EffortResults" component={EffortResults} options={{ title: 'Results' }} initialParams={{ successRate: 0, hardRate: 60, score: 12 }} />
-            <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
-            <Stack.Screen
-              name="Settings"
-              component={Settings}
-              options={{
-                title: 'Settings',
-                presentation: 'modal',
-                headerRight: () => <Button onPress={() => navigation.navigate('TaskSelection', {})} title="Done" />,
-              }}
-            />
-            <Stack.Screen
-              name="Licenses"
-              component={Licenses}
-              options={{
-                title: 'Licenses',
-                presentation: 'modal',
-                headerRight: () => <Button onPress={() => navigation.navigate('Settings', {})} title="Done" />,
-              }}
-            />
-            <Stack.Screen name="PDDQuiz" component={PDDQuiz} options={{ title: 'PDDQuiz' }} />
-          </Stack.Navigator>
-        )}
-      </NavigationContainer>
-    </NavigationContext.Provider>
-
     // <NavigationContext.Provider value={navigationContext}>
     //   <NavigationContainer ref={navigationRef}>
-    //     <Stack.Navigator
-    //       initialRouteName="TaskSelection"
-    //       screenOptions={{
-    //         headerShown: false,
-    //       }}
-    //     >
-    //       <Stack.Screen name="OnboardingChat" component={OnboardingChat} />
-    //       <Stack.Screen
-    //         name="TaskSelection"
-    //         component={TaskSelection}
-    //         options={{
-    //           title: 'Tasks',
-    //           headerRight: () => (
-    //             <TouchableOpacity onPress={() => navigation.navigate('Settings', {})}>
-    //               <Ionicons name="settings-sharp" size={24} color={Platform.OS === 'ios' ? PlatformColor('link') : 'blue'} />
-    //             </TouchableOpacity>
-    //           ),
+    //     {state.isLoading ? (
+    //       // We haven't finished checking for the token yet
+    //       <Stack.Navigator
+    //         initialRouteName="SplashScreen"
+    //         screenOptions={{
+    //           headerShown: false,
     //         }}
-    //       />
-    //       <Stack.Screen name="EmotionSensitivity" component={EmotionSensitivityTask} options={{ title: 'Happy or Sad?' }} />
-    //       <Stack.Screen name="EmoSensResults" component={EmoSensResults} options={{ title: 'Results' }} initialParams={{ accuracy: 0, arTime: 0 }} />
-    //       <Stack.Screen name="MemoryRecall" component={MemoryRecallTask} options={{ title: 'Memory Recall' }} />
-    //       <Stack.Screen name="MemoryResults" component={MemoryResults} options={{ title: 'Results' }} initialParams={{ recalledWords: 0 }} />
-    //       <Stack.Screen name="PanasTask" component={PanasTask} options={{ title: 'Read Your Mood' }} />
-    //       <Stack.Screen name="ReinforcementLearning" component={ReinforcedLearningTask} options={{ title: 'Patterns and Points' }} />
-    //       <Stack.Screen name="RLResults" component={RLResults} options={{ title: 'Results' }} />
-    //       <Stack.Screen name="DelayDiscounting" component={DelayDiscountingTask} options={{ title: 'Now or Later' }} />
-    //       <Stack.Screen name="DelayResults" component={DelayResults} options={{ title: 'Results' }} initialParams={{ now: 50, later: 50 }} />
-    //       <Stack.Screen name="SlotMachine" component={SlotMachine} options={{ title: 'Slot Machine' }} />
-    //       <Stack.Screen name="EffortExpenditure" component={EffortExpenditureTask} options={{ title: 'Fill the Bar' }} />
-    //       <Stack.Screen name="EffortResults" component={EffortResults} options={{ title: 'Results' }} initialParams={{ successRate: 0, hardRate: 60, score: 12 }} />
-    //       <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
-    //       <Stack.Screen
-    //         name="Settings"
-    //         component={Settings}
-    //         options={{
-    //           title: 'Settings',
-    //           presentation: 'modal',
-    //           headerRight: () => <Button onPress={() => navigation.navigate('TaskSelection', {})} title="Done" />,
+    //       >
+    //         <Stack.Screen name="SplashScreen" component={SplashScreen} options={{ headerShown: false }} />
+    //       </Stack.Navigator>
+    //     ) : state.userToken == null ? (
+    //       // No token found, user isn't signed in
+    //       <Stack.Navigator
+    //         initialRouteName="SignIn"
+    //         screenOptions={{
+    //           headerShown: false,
     //         }}
-    //       />
-    //       <Stack.Screen
-    //         name="Licenses"
-    //         component={Licenses}
-    //         options={{
-    //           title: 'Licenses',
-    //           presentation: 'modal',
-    //           headerRight: () => <Button onPress={() => navigation.navigate('Settings', {})} title="Done" />,
+    //       >
+    //         {/* {!state.hasCompletedOnboarding && <Stack.Screen name="Onboarding" component={Onboarding} options={{ headerShown: false }} />} */}
+    //         {!state.hasCompletedOnboarding && <Stack.Screen name="OnboardingChat" component={OnboardingChat} />}
+
+    //         <Stack.Screen name="SignIn" component={SignIn} options={{ title: 'Sign In', animationTypeForReplace: state.isSignOut ? 'pop' : 'push' }} />
+    //       </Stack.Navigator>
+    //     ) : (
+    //       // User is signed in
+    //       <Stack.Navigator
+    //         initialRouteName="TaskSelection"
+    //         screenOptions={{
+    //           headerShown: false,
     //         }}
-    //       />
-    //       <Stack.Screen name="PDDQuiz" component={PDDQuiz} options={{ title: 'PDDQuiz' }} />
-    //     </Stack.Navigator>
+    //       >
+    //         <Stack.Screen name="OnboardingChat" component={OnboardingChat} />
+    //         <Stack.Screen
+    //           name="TaskSelection"
+    //           component={TaskSelection}
+    //           options={{
+    //             title: 'Tasks',
+    //             headerRight: () => (
+    //               <TouchableOpacity onPress={() => navigation.navigate('Settings', {})}>
+    //                 <Ionicons name="settings-sharp" size={24} color={Platform.OS === 'ios' ? PlatformColor('link') : 'blue'} />
+    //               </TouchableOpacity>
+    //             ),
+    //           }}
+    //         />
+    //         <Stack.Screen name="EmotionSensitivity" component={EmotionSensitivityTask} options={{ title: 'Happy or Sad?' }} />
+    //         <Stack.Screen name="EmoSensResults" component={EmoSensResults} options={{ title: 'Results' }} initialParams={{ accuracy: 0, arTime: 0 }} />
+    //         <Stack.Screen name="MemoryRecall" component={MemoryRecallTask} options={{ title: 'Memory Recall' }} />
+    //         <Stack.Screen name="MemoryResults" component={MemoryResults} options={{ title: 'Results' }} initialParams={{ recalledWords: 0 }} />
+    //         <Stack.Screen name="PanasTask" component={PanasTask} options={{ title: 'Read Your Mood' }} />
+    //         <Stack.Screen name="ReinforcementLearning" component={ReinforcedLearningTask} options={{ title: 'Patterns and Points' }} />
+    //         <Stack.Screen name="RLResults" component={RLResults} options={{ title: 'Results' }} />
+    //         <Stack.Screen name="DelayDiscounting" component={DelayDiscountingTask} options={{ title: 'Now or Later' }} />
+    //         <Stack.Screen name="DelayResults" component={DelayResults} options={{ title: 'Results' }} initialParams={{ now: 50, later: 50 }} />
+    //         <Stack.Screen name="SlotMachine" component={SlotMachine} options={{ title: 'Slot Machine' }} />
+    //         <Stack.Screen name="EffortExpenditure" component={EffortExpenditureTask} options={{ title: 'Fill the Bar' }} />
+    //         <Stack.Screen name="EffortResults" component={EffortResults} options={{ title: 'Results' }} initialParams={{ successRate: 0, hardRate: 60, score: 12 }} />
+    //         <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
+    //         <Stack.Screen
+    //           name="Settings"
+    //           component={Settings}
+    //           options={{
+    //             title: 'Settings',
+    //             presentation: 'modal',
+    //             headerRight: () => <Button onPress={() => navigation.navigate('TaskSelection', {})} title="Done" />,
+    //           }}
+    //         />
+    //         <Stack.Screen
+    //           name="Licenses"
+    //           component={Licenses}
+    //           options={{
+    //             title: 'Licenses',
+    //             presentation: 'modal',
+    //             headerRight: () => <Button onPress={() => navigation.navigate('Settings', {})} title="Done" />,
+    //           }}
+    //         />
+    //         <Stack.Screen name="PDDQuiz" component={PDDQuiz} options={{ title: 'PDDQuiz' }} />
+    //       </Stack.Navigator>
+    //     )}
     //   </NavigationContainer>
     // </NavigationContext.Provider>
+
+    <NavigationContext.Provider value={navigationContext}>
+      <NavigationContainer ref={navigationRef}>
+        <Stack.Navigator
+          initialRouteName="TaskSelection"
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="OnboardingChat" component={OnboardingChat} />
+          <Stack.Screen
+            name="TaskSelection"
+            component={TaskSelection}
+            options={{
+              title: 'Tasks',
+              headerRight: () => (
+                <TouchableOpacity onPress={() => navigation.navigate('Settings', {})}>
+                  <Ionicons name="settings-sharp" size={24} color={Platform.OS === 'ios' ? PlatformColor('link') : 'blue'} />
+                </TouchableOpacity>
+              ),
+            }}
+          />
+          <Stack.Screen name="EmotionSensitivity" component={EmotionSensitivityTask} options={{ title: 'Happy or Sad?' }} />
+          <Stack.Screen name="EmoSensResults" component={EmoSensResults} options={{ title: 'Results' }} initialParams={{ accuracy: 0, arTime: 0 }} />
+          <Stack.Screen name="MemoryRecall" component={MemoryRecallTask} options={{ title: 'Memory Recall' }} />
+          <Stack.Screen name="MemoryResults" component={MemoryResults} options={{ title: 'Results' }} initialParams={{ recalledWords: 0 }} />
+          <Stack.Screen name="PanasTask" component={PanasTask} options={{ title: 'Read Your Mood' }} />
+          <Stack.Screen name="ReinforcementLearning" component={ReinforcedLearningTask} options={{ title: 'Patterns and Points' }} />
+          <Stack.Screen name="RLResults" component={RLResults} options={{ title: 'Results' }} />
+          <Stack.Screen name="DelayDiscounting" component={DelayDiscountingTask} options={{ title: 'Now or Later' }} />
+          <Stack.Screen name="DelayResults" component={DelayResults} options={{ title: 'Results' }} initialParams={{ now: 50, later: 50 }} />
+          <Stack.Screen name="SlotMachine" component={SlotMachine} options={{ title: 'Slot Machine' }} />
+          <Stack.Screen name="EffortExpenditure" component={EffortExpenditureTask} options={{ title: 'Fill the Bar' }} />
+          <Stack.Screen name="EffortResults" component={EffortResults} options={{ title: 'Results' }} initialParams={{ successRate: 0, hardRate: 60, score: 12 }} />
+          <Stack.Screen name="Profile" component={Profile} options={{ title: 'Profile' }} />
+          <Stack.Screen
+            name="Settings"
+            component={Settings}
+            options={{
+              title: 'Settings',
+              presentation: 'modal',
+              headerRight: () => <Button onPress={() => navigation.navigate('TaskSelection', {})} title="Done" />,
+            }}
+          />
+          <Stack.Screen
+            name="Licenses"
+            component={Licenses}
+            options={{
+              title: 'Licenses',
+              presentation: 'modal',
+              headerRight: () => <Button onPress={() => navigation.navigate('Settings', {})} title="Done" />,
+            }}
+          />
+          <Stack.Screen name="PDDQuiz" component={PDDQuiz} options={{ title: 'PDDQuiz' }} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </NavigationContext.Provider>
   )
 }

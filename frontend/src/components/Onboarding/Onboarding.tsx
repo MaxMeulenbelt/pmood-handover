@@ -126,7 +126,7 @@ export default function Onboarding(props: Props) {
               alignItems: 'center',
             }}
           >
-            <Text style={{ fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial', fontSize: 13, color: 'white' }}>Tap the heart if you are ready</Text>
+            <Text style={{ fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto', fontSize: 13, color: 'white' }}>Tap the heart if you are ready</Text>
           </View>
         </BlurView>
       </View>
@@ -586,7 +586,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     marginTop: 12,
     color: 'white',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
@@ -612,7 +612,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     textAlign: 'center',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   descriptionBox: {
     flex: 1,
@@ -630,7 +630,7 @@ const styles = StyleSheet.create({
   },
   identifierInput: {
     fontSize: 18,
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
     color: 'white',
     textAlign: 'center',
     height: 46,

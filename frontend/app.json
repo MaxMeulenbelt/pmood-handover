@@ -53,7 +53,8 @@
           "icon": "./assets/notification-icon-android.png",
           "color": "#ffffff"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "extra": {
       "eas": {

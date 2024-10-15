@@ -24,10 +24,10 @@ export default function DelayDiscountingTask(props: Props) {
   const [totalTrials, setTotalTrials] = useState(0)
 
   const [nowValue, setNowValue] = useState(200)
-  const [nowCount, setNowCount] = useState(null || 0)
+  const [nowCount, setNowCount] = useState(0)
 
   const [laterValue, setLaterValue] = useState(800)
-  const [laterCount, setLaterCount] = useState(null || 0)
+  const [laterCount, setLaterCount] = useState(0)
 
   const [timeframeIdx, setTimeframeIdx] = useState(0)
   const [timeframes, setTimeframes] = useState(['In 2 weeks', 'In 1 month', 'In 6 months', 'In 1 year', 'In 3 years', 'In 10 years'])
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 32,
     color: '#fff',
-    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Arial',
+    fontFamily: Platform.OS === 'ios' ? 'Chalkboard SE' : 'Roboto',
   },
   instructionTextBold: {
     fontSize: 18,
